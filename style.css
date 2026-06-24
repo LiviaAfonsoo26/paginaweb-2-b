@@ -1,12 +1,10 @@
 .cabecalho {
 padding: 15px 25px;
 }
-
 .cartao {
 width: 260px;
 height: 200px;
 }
-
 .cartao-imagem {
 width: 100%;
 }
@@ -20,11 +18,10 @@ body {
   display: flex; 
   flex-direction: column; 
   min-height: 100vh; 
-}  
+} 
 main { 
   flex: 1; 
 } 
-
 .cabecalho { 
   background-color: #7e3e1c; 
   padding: 15px 25px; 
