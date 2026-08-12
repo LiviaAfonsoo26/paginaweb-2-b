@@ -1,40 +1,99 @@
-<!DOCTYPE html> 
-<html lang="pt-br"> 
-  <head> 
-    <meta charset="UTF-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <title>Flashcards de Mitos e Verdades</title> 
-  </head> 
-  <body> 
-    <header> 
-  <h1>Confere Aí</h1> 
-  <nav> 
-<a href="#" class="cabecalho-link">Início</a> 
-  </nav> 
-</header> 
- 
- 
-   <main> 
-  <h2>Descubra a verdade passando o mouse</h2> 
-  <section> 
-    <article> 
-      <div> 
-        <div> 
-          <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/mm1012723121410486.jpg?w=1900&h=2849" alt="Pinguim" class="cartao-imagem"> 
-          <p>Pinguins conseguem voar como pássaros!</p> 
-        </div> 
-        <div class="cartao-verso"> 
-          <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/mm1012723121410486.jpg?w=1900&h=2849" alt="Pinguim" class="cartao-imagem"> 
-          <p>Pinguins não voam, mas são excelentes nadadores.</p> 
-        </div> 
-      </div> 
-    </article> 
-  </section> 
-</main> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashcards CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Libre+Franklin:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div>
+          <span class="tag">CSS</span>
+          <h1>Flashcards de CSS</h1>
+        </div>
+        <p class="note">Trilha visual para aprender seletores e layouts.</p>
+      </header>
 
-    <footer> 
-  <p>Projeto feito por [Lívia]</p> 
-</footer> 
+      <main>
+        <section class="controls" aria-label="Controles da página">
+          <div class="control-group">
+            <div>
+              <h2>Tamanho</h2>
+              <p>Ajuste a escala dos cards.</p>
+            </div>
+            <div class="buttons">
+              <button id="decrease-size" type="button" aria-label="Diminuir tamanho">−</button>
+              <output id="size-indicator" aria-live="polite">100%</output>
+              <button id="increase-size" type="button" aria-label="Aumentar tamanho">+</button>
+            </div>
+          </div>
 
-  </body> 
-</html> 
+          <div class="control-group">
+            <div>
+              <h2>Visão de cores</h2>
+            </div>
+            <div class="vision-buttons" role="group" aria-label="Simulação de visão de cores">
+              <button class="vision-button is-selected" id="normal-vision" type="button" aria-pressed="true">Normal</button>
+              <button class="vision-button" id="protanopia" type="button" aria-pressed="false">Protanopia</button>
+              <button class="vision-button" id="deuteranopia" type="button" aria-pressed="false">Deuteranopia</button>
+              <button class="vision-button" id="tritanopia" type="button" aria-pressed="false">Tritanopia</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="flashcard-stage" class="cards" aria-label="Lista de flashcards de CSS">
+          <article class="card">
+            <span class="code">01</span>
+            <div class="line"></div>
+            <h3>Seletores</h3>
+            <p>Selecionam elementos específicos para aplicar estilo de forma precisa.</p>
+            <pre>button:hover {
+  color: #165b45;
+}</pre>
+          </article>
+
+          <article class="card">
+            <span class="code">02</span>
+            <div class="line"></div>
+            <h3>Propriedades</h3>
+            <p>Definem aparência, espaço, cor, alinhamento e comportamento dos elementos.</p>
+            <pre>padding: 16px;
+background: #f2ede2;</pre>
+          </article>
+
+          <article class="card">
+            <span class="code">03</span>
+            <div class="line"></div>
+            <h3>Acessibilidade</h3>
+            <p>Contraste, foco e clareza ajudam a manter a interface legível para todos.</p>
+            <pre>button:focus-visible {
+  outline: 3px solid #17211d;
+}</pre>
+          </article>
+
+          <article class="card">
+            <span class="code">04</span>
+            <div class="line"></div>
+            <h3>Layout</h3>
+            <p>Grid, flexbox e espaçamento organizam o conteúdo de forma visualmente equilibrada.</p>
+            <pre>.container {
+  display: grid;
+  gap: 24px;
+}</pre>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <p>Aprender CSS fica mais simples quando a estrutura e a leitura são claras.</p>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
