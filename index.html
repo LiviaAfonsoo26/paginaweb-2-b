@@ -1,99 +1,246 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flashcards CSS</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Libre+Franklin:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="page">
-      <header class="topbar">
-        <div>
-          <span class="tag">CSS</span>
-          <h1>Flashcards de CSS</h1>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Curiosidades Estranhas sobre o Mundo</title>
+       
+</head>
+
+<body>
+    <main>
+        <h1>Projeto Integrador - IFA</h1>
+        
+        <!-- Painel de Controle -->
+        <div id="controle-panel" class="controle-panel">
+            <div class="controle-grupo">
+                <label for="tamanho">Tamanho do Texto:</label>
+                <button id="diminuir-tamanho" class="btn-controle" aria-label="Diminuir tamanho">−</button>
+                <span id="indicador-tamanho" class="indicador">100%</span>
+                <button id="aumentar-tamanho" class="btn-controle" aria-label="Aumentar tamanho">+</button>
+            </div>
         </div>
-        <p class="note">Trilha visual para aprender seletores e layouts.</p>
-      </header>
+        
+        <section id="container" class="container">
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3 id=" titulo" class="titulo-principal">O que é a Ilha das Cobras (Queimada Grande)?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>A Ilha Queimada Grande, localizada a 35 km da costa de São Paulo, é uma das mais
+                            perigosas e restritas do planeta. Estima-se que haja entre uma e cinco cobras por
+                            metro quadrado da ilha. O governo brasileiro proíbe o acesso à ilha, exceto para
+                            pesquisadores autorizados, que devem seguir protocolos de segurança rigorosos.</p>
+                    </div>
+                </div>
+            </article>
 
-      <main>
-        <section class="controls" aria-label="Controles da página">
-          <div class="control-group">
-            <div>
-              <h2>Tamanho</h2>
-              <p>Ajuste a escala dos cards.</p>
-            </div>
-            <div class="buttons">
-              <button id="decrease-size" type="button" aria-label="Diminuir tamanho">−</button>
-              <output id="size-indicator" aria-live="polite">100%</output>
-              <button id="increase-size" type="button" aria-label="Aumentar tamanho">+</button>
-            </div>
-          </div>
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é a Caverna de Lascaux?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>Com cerca de 17 mil anos, a Caverna de Lascaux, no sul da França, contém uma das
+                            mais impressionantes coleções de arte rupestre. Em 1940, a caverna foi aberta ao
+                            público, mas as visitas foram suspensas em 1963 devido ao risco de danos nas pinturas.</p>
+                    </div>
+                </div>
+            </article>
 
-          <div class="control-group">
-            <div>
-              <h2>Visão de cores</h2>
-            </div>
-            <div class="vision-buttons" role="group" aria-label="Simulação de visão de cores">
-              <button class="vision-button is-selected" id="normal-vision" type="button" aria-pressed="true">Normal</button>
-              <button class="vision-button" id="protanopia" type="button" aria-pressed="false">Protanopia</button>
-              <button class="vision-button" id="deuteranopia" type="button" aria-pressed="false">Deuteranopia</button>
-              <button class="vision-button" id="tritanopia" type="button" aria-pressed="false">Tritanopia</button>
-            </div>
-          </div>
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é o Museu da Segurança Nacional de Jiangsu?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>Localizado na China, o Museu da Segurança Nacional de Jiangsu contém documentos
+                            ultrassecreto sobre a história da espionagem no país. Estrangeiros não podem
+                            visitar e fotos são proibidas até para cidadãos chineses autorizados.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é a Área 51?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>A Área 51, localizada no deserto de Nevada, é uma base militar dos EUA famosa por seu
+                            segredo e por alimentar teorias conspiratórias, especialmente sobre extraterrestres. O
+                            acesso
+                            é proibido, apesar de muitas tentativas de visitantes.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é a Ilha Sentinel do Norte?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>A tribo da Ilha Sentinel do Norte é uma das últimas a viver sem contato com o mundo externo.
+                            A ilha é extremamente isolada, e visitantes são proibidos de ir, devido ao risco de
+                            contaminação e ataques dos nativos.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é o Castelo de Bran?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>O Castelo de Bran, na Romênia, é frequentemente associado à lenda de Drácula, mas não tem
+                            relação direta com Vlad, o Empalador. No entanto, é um destino turístico popular devido à
+                            sua arquitetura medieval e conexão com o mito.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que são as Linhas de Nazca?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>Localizadas no deserto do Peru, as Linhas de Nazca são figuras misteriosas que só podem ser
+                            vistas de grandes altitudes. Seu propósito permanece desconhecido até hoje, e algumas
+                            teorias sugerem que foram feitas por extraterrestres.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é o Lago Natron?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>O Lago Natron, na Tanzânia, é famoso por sua água altamente alcalina, que pode transformar
+                            animais mortos em figuras petrificadas. Esse fenômeno ocorre devido às altas concentrações
+                            de
+                            sal e soda cáustica no lago.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é o Cemitério de Aviões de Tucson?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>Localizado no deserto do Arizona, este "cemitério" é um depósito de aviões retirados de
+                            serviço. As condições climáticas ideais para a preservação de peças e aeronaves fazem de
+                            Tucson
+                            um local estratégico para esse tipo de armazenamento.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que são os Vórtices Magnéticos?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>Os vórtices magnéticos são áreas na Terra onde o campo magnético é distorcido, e esses locais
+                            têm sido associados a fenômenos misteriosos, como desaparecimentos inexplicáveis e
+                            avistamentos
+                            de OVNIs. Estes vórtices ainda são um campo de pesquisa fascinante.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é a Cidade Subterrânea de Derinkuyu?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>Localizada na Capadócia, Turquia, Derinkuyu é uma antiga cidade subterrânea que se estende
+                            por mais de 8 andares abaixo do solo. Construída para proteger os habitantes de invasões,
+                            ela possuía moradias, estábulos, igrejas, escolas, adegas e sistemas de ventilação
+                            complexos, podendo abrigar milhares de pessoas.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é o Triângulo de Bennington?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>O Triângulo de Bennington é uma área no sudoeste de Vermont, EUA, notória por uma série de
+                            desaparecimentos inexplicáveis entre 1945 e 1950. Cinco pessoas desapareceram sem deixar
+                            rastros significativos, alimentando lendas locais sobre fenômenos paranormais, criaturas
+                            misteriosas como "Bigfoot" e até abduções alienígenas na região.</p>
+                    </div>
+                </div>
+            </article>
+
+                        <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é o Triângulo de Bennington?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>O Triângulo de Bennington é uma área no sudoeste de Vermont, EUA, notória por uma série de
+                            desaparecimentos inexplicáveis entre 1945 e 1950. Cinco pessoas desapareceram sem deixar
+                            rastros significativos, alimentando lendas locais sobre fenômenos paranormais, criaturas
+                            misteriosas como "Bigfoot" e até abduções alienígenas na região.</p>
+                    </div>
+                </div>
+            </article>
+
+                        <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é o Triângulo de Bennington?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>O Triângulo de Bennington é uma área no sudoeste de Vermont, EUA, notória por uma série de
+                            desaparecimentos inexplicáveis entre 1945 e 1950. Cinco pessoas desapareceram sem deixar
+                            rastros significativos, alimentando lendas locais sobre fenômenos paranormais, criaturas
+                            misteriosas como "Bigfoot" e até abduções alienígenas na região.</p>
+                    </div>
+                </div>
+            </article>
+
+                        <article class="cartao">
+                <div class="cartao-conteudo">
+                    <div class="cartao-frente">
+                        <h3>O que é o Triângulo de Bennington?</h3>
+                    </div>
+                    <div class="cartao-verso">
+                        <p>O Triângulo de Bennington é uma área no sudoeste de Vermont, EUA, notória por uma série de
+                            desaparecimentos inexplicáveis entre 1945 e 1950. Cinco pessoas desapareceram sem deixar
+                            rastros significativos, alimentando lendas locais sobre fenômenos paranormais, criaturas
+                            misteriosas como "Bigfoot" e até abduções alienígenas na região.</p>
+                    </div>
+                </div>
+            </article>
+
         </section>
+        <br><br>
 
-        <section id="flashcard-stage" class="cards" aria-label="Lista de flashcards de CSS">
-          <article class="card">
-            <span class="code">01</span>
-            <div class="line"></div>
-            <h3>Seletores</h3>
-            <p>Selecionam elementos específicos para aplicar estilo de forma precisa.</p>
-            <pre>button:hover {
-  color: #165b45;
-}</pre>
-          </article>
 
-          <article class="card">
-            <span class="code">02</span>
-            <div class="line"></div>
-            <h3>Propriedades</h3>
-            <p>Definem aparência, espaço, cor, alinhamento e comportamento dos elementos.</p>
-            <pre>padding: 16px;
-background: #f2ede2;</pre>
-          </article>
+        <footer>
+            <p>&copy; 2026 por Livia Afonso e Gustavo Barbosa
 
-          <article class="card">
-            <span class="code">03</span>
-            <div class="line"></div>
-            <h3>Acessibilidade</h3>
-            <p>Contraste, foco e clareza ajudam a manter a interface legível para todos.</p>
-            <pre>button:focus-visible {
-  outline: 3px solid #17211d;
-}</pre>
-          </article>
-
-          <article class="card">
-            <span class="code">04</span>
-            <div class="line"></div>
-            <h3>Layout</h3>
-            <p>Grid, flexbox e espaçamento organizam o conteúdo de forma visualmente equilibrada.</p>
-            <pre>.container {
-  display: grid;
-  gap: 24px;
-}</pre>
-          </article>
-        </section>
-      </main>
-
-      <footer>
-        <p>Aprender CSS fica mais simples quando a estrutura e a leitura são claras.</p>
-      </footer>
-    </div>
-
+            </p>
+        </footer>
+    </main>
     <script src="main.js"></script>
-  </body>
+</body>
 </html>

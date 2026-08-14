@@ -1,47 +1,54 @@
-const stage = document.getElementById("flashcard-stage");
-const indicator = document.getElementById("size-indicator");
-const decreaseButton = document.getElementById("decrease-size");
-const increaseButton = document.getElementById("increase-size");
-const visionButtons = document.querySelectorAll(".vision-button");
-const visionModes = ["protanopia", "deuteranopia", "tritanopia"];
+// ===== Controle de Zoom de Texto e Cards =====
+const container = document.getElementById('container');
+const indicadorTamanho = document.getElementById('indicador-tamanho');
+const btnAumentar = document.getElementById('aumentar-tamanho');
+const btnDiminuir = document.getElementById('diminuir-tamanho');
 
-let scale = 1;
+let escala = 1;
+const minEscala = 0.8;
+const maxEscala = 1.5;
+const passo = 0.1;
 
-function updateScale() {
-  stage.style.setProperty("--card-scale", scale.toFixed(2));
-  indicator.textContent = `${Math.round(scale * 100)}%`;
-  decreaseButton.disabled = scale <= 0.8;
-  increaseButton.disabled = scale >= 1.3;
+function atualizarTamanho() {
+    // Aplica a escala a todos os cards
+    const cards = document.querySelectorAll('.cartao');
+    cards.forEach(card => {
+        card.style.transform = `scale(${escala})`;
+        card.style.transformOrigin = 'top center';
+    });
+    
+    // Atualiza o indicador
+    indicadorTamanho.textContent = `${Math.round(escala * 100)}%`;
+    
+    // Desabilita botões nos limites
+    btnDiminuir.disabled = escala <= minEscala;
+    btnAumentar.disabled = escala >= maxEscala;
 }
 
-function setVision(mode) {
-  stage.classList.remove(...visionModes);
-  visionButtons.forEach((button) => {
-    const active = button.id === mode;
-    button.classList.toggle("is-selected", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
-
-  if (mode !== "normal-vision") {
-    stage.classList.add(mode);
-  }
-}
-
-decreaseButton.addEventListener("click", () => {
-  scale = Math.max(0.8, scale - 0.1);
-  updateScale();
+btnAumentar.addEventListener('click', () => {
+    if (escala < maxEscala) {
+        escala = Math.min(maxEscala, escala + passo);
+        atualizarTamanho();
+    }
 });
 
-increaseButton.addEventListener("click", () => {
-  scale = Math.min(1.3, scale + 0.1);
-  updateScale();
+btnDiminuir.addEventListener('click', () => {
+    if (escala > minEscala) {
+        escala = Math.max(minEscala, escala - passo);
+        atualizarTamanho();
+    }
 });
 
-visionButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const mode = button.id === "normal-vision" ? "normal-vision" : button.id;
-    setVision(mode);
-  });
-});
+// Inicializa o tamanho
+atualizarTamanho();
 
-updateScale();
+// ===== Controle de Flip dos Cards =====
+// Seleciona todos os elementos com a classe 'cartao'
+document.querySelectorAll('.cartao').forEach(card => {
+    // Adiciona um 'event listener' para o evento de clique em cada card
+    card.addEventListener('click', () => {
+        // Alterna a classe 'virado' no card clicado
+        card.classList.toggle('virado');
+        console.log('Card clicado! Classe "virado" alternada.'); // Mensagem para depuração
+    });
+});
