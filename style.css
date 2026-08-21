@@ -1,8 +1,10 @@
 body {
+    --cor-frente: #f5f5f5;
+    --cor-verso: #ebebeb;
+    --cor-texto-card: #2c2c2c;
     font-family: Arial, sans-serif;
-    background-color: #f8f0e5;
-    /* Um creme suave como cor de fundo de fallback */
-    background-image: url('painted-neutral.jpg');
+    background-color: #ffffff;
+    background-image: none;
     background-size: cover;
     /* Garante que a imagem cubra todo o corpo */
     background-position: center;
@@ -48,6 +50,12 @@ body {
     white-space: nowrap;
 }
 
+.controle-label {
+    color: #ffffff;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
 .btn-controle {
     background-color: #2c2c2c;
     /* Cinza escuro */
@@ -66,6 +74,11 @@ body {
     background-color: #1a1a1a;
     /* Ainda mais escuro no hover */
     transform: scale(1.05);
+}
+
+.btn-daltonismo.ativo {
+    background-color: #ffffff;
+    color: #1a1a1a;
 }
 
 .btn-controle:disabled {
@@ -117,6 +130,7 @@ main h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     /* Sombra mais suave e proeminente */
     height: 200px;
+    margin-bottom: var(--espaco-extra, 0px);
     /* Altura padrão */
     perspective: 1000px;
     cursor: pointer;
@@ -165,23 +179,47 @@ main h1 {
 }
 
 .cartao-frente {
-    background-color: #f5f5f5;
+    background-color: var(--cor-frente);
     /* Cinza neutro claro */
-    color: #2c2c2c;
+    color: var(--cor-texto-card);
     /* Cinza escuro para o texto */
     border: 1px solid #cccccc;
     /* Borda neutra */
 }
 
 .cartao-verso {
-    background-color: #ebebeb;
+    background-color: var(--cor-verso);
     /* Cinza neutro ligeiramente mais escuro */
-    color: #2c2c2c;
+    color: var(--cor-texto-card);
     transform: rotateY(180deg);
     /* Inicialmente vira o verso para que ele comece escondido */
     padding: 15px;
     border: 1px solid #bcbcbc;
     /* Borda neutra */
+}
+
+body[data-tema="protanopia"] {
+    --cor-frente: #d9f0ff;
+    --cor-verso: #fff1c1;
+    --cor-texto-card: #102a43;
+}
+
+body[data-tema="normal"] {
+    --cor-frente: #f5f5f5;
+    --cor-verso: #ebebeb;
+    --cor-texto-card: #2c2c2c;
+}
+
+body[data-tema="deuteranopia"] {
+    --cor-frente: #e3d7ff;
+    --cor-verso: #fff0b3;
+    --cor-texto-card: #24104f;
+}
+
+body[data-tema="tritanopia"] {
+    --cor-frente: #ffe0d2;
+    --cor-verso: #d9f5e5;
+    --cor-texto-card: #263238;
 }
 
 .cartao h3 {

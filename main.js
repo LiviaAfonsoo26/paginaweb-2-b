@@ -3,6 +3,7 @@ const container = document.getElementById('container');
 const indicadorTamanho = document.getElementById('indicador-tamanho');
 const btnAumentar = document.getElementById('aumentar-tamanho');
 const btnDiminuir = document.getElementById('diminuir-tamanho');
+const botoesDaltonismo = document.querySelectorAll('.btn-daltonismo');
 
 let escala = 1;
 const minEscala = 0.8;
@@ -13,6 +14,8 @@ function atualizarTamanho() {
     // Aplica a escala a todos os cards
     const cards = document.querySelectorAll('.cartao');
     cards.forEach(card => {
+        const espacoExtra = Math.max(0, (escala - 1) * card.offsetHeight);
+        card.style.setProperty('--espaco-extra', `${espacoExtra}px`);
         card.style.transform = `scale(${escala})`;
         card.style.transformOrigin = 'top center';
     });
@@ -41,6 +44,19 @@ btnDiminuir.addEventListener('click', () => {
 
 // Inicializa o tamanho
 atualizarTamanho();
+
+// ===== Controle de tipo de daltonismo =====
+botoesDaltonismo.forEach(botao => {
+    botao.addEventListener('click', () => {
+        document.body.dataset.tema = botao.dataset.tema;
+
+        botoesDaltonismo.forEach(botaoAtual => {
+            const selecionado = botaoAtual === botao;
+            botaoAtual.classList.toggle('ativo', selecionado);
+            botaoAtual.setAttribute('aria-pressed', selecionado);
+        });
+    });
+});
 
 // ===== Controle de Flip dos Cards =====
 // Seleciona todos os elementos com a classe 'cartao'
