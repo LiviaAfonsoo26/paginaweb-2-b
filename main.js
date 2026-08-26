@@ -14,10 +14,7 @@ function atualizarTamanho() {
     // Aplica a escala a todos os cards
     const cards = document.querySelectorAll('.cartao');
     cards.forEach(card => {
-        const espacoExtra = Math.max(0, (escala - 1) * card.offsetHeight);
-        card.style.setProperty('--espaco-extra', `${espacoExtra}px`);
-        card.style.transform = `scale(${escala})`;
-        card.style.transformOrigin = 'top center';
+        card.style.setProperty('--escala-card', escala);
     });
     
     // Atualiza o indicador
