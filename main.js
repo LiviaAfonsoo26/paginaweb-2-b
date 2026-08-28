@@ -58,10 +58,11 @@ botoesDaltonismo.forEach(botao => {
 // ===== Controle de Flip dos Cards =====
 // Seleciona todos os elementos com a classe 'cartao'
 document.querySelectorAll('.cartao').forEach(card => {
+    card.classList.remove('virado');
+
     // Adiciona um 'event listener' para o evento de clique em cada card
     card.addEventListener('click', () => {
         // Alterna a classe 'virado' no card clicado
         card.classList.toggle('virado');
-        console.log('Card clicado! Classe "virado" alternada.'); // Mensagem para depuração
     });
 });
